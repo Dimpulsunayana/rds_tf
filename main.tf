@@ -44,6 +44,7 @@ resource "aws_rds_cluster" "rds" {
   db_subnet_group_name   = aws_docdb_subnet_group.rds.name
   vpc_security_group_ids = [aws_security_group.rds.id]
   storage_encrypted = true
+  skip_final_snapshot = true
   tags       = merge(
     local.common_tags,
     { name = "${var.env}-rds_cluster" }
