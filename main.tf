@@ -41,6 +41,9 @@ resource "aws_rds_cluster" "rds" {
   database_name           = "mysql"
   master_username         = "dimpul"
   master_password         = "dimpul123"
+  //storage_type              = "io1"
+  allocated_storage         = 20
+  iops                      = 1000
   db_subnet_group_name   = aws_docdb_subnet_group.rds.name
   vpc_security_group_ids = [aws_security_group.rds.id]
   storage_encrypted = true
