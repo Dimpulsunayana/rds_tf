@@ -38,13 +38,14 @@ resource "aws_rds_cluster" "rds" {
   cluster_identifier      = "${var.env}-rds"
   engine                  = var.engine
   engine_version          = var.engine_version
-  database_name           = "mydsql"
+  database_name           = "mysql"
   master_username         = "dimpul"
   master_password         = "dimpul123"
   db_subnet_group_name   = aws_docdb_subnet_group.rds.name
   vpc_security_group_ids = [aws_security_group.rds.id]
   storage_encrypted = true
-  skip_final_snapshot = true
+  skip_final_snapshot = false
+  final_snapshot_identifier = "ci-aurora-cluster-backup"
   tags       = merge(
     local.common_tags,
     { name = "${var.env}-rds_cluster" }
