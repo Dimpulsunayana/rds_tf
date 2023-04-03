@@ -40,7 +40,7 @@ resource "aws_rds_cluster" "rds" {
   engine_version          = var.engine_version
   database_name           = "mydsql"
   master_username         = "dimpul"
-  master_password         = "dimpul1"
+  master_password         = "dimpul123"
   db_subnet_group_name   = aws_docdb_subnet_group.rds.name
   vpc_security_group_ids = [aws_security_group.rds.id]
   storage_encrypted = true
