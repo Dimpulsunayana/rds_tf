@@ -38,7 +38,7 @@ resource "aws_rds_cluster" "rds" {
   cluster_identifier      = "${var.env}-rds"
   engine                  = var.engine
   engine_version          = var.engine_version
-  database_name           = "mysql"
+#  database_name           = "mysql"
   master_username         = "dimpul"
   master_password         = "dimpul123"
   //storage_type              = "io1"
