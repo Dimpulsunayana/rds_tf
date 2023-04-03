@@ -24,7 +24,7 @@ resource "aws_security_group" "rds" {
   )
 }
 
-resource "aws_docdb_subnet_group" "rds" {
+resource "aws_db_subnet_group" "rds" {
   name       = "${var.env}-rds_subnetgrp"
   subnet_ids = var.subnet_ids
 
