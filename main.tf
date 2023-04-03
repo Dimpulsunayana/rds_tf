@@ -45,7 +45,7 @@ resource "aws_rds_cluster" "rds" {
   vpc_security_group_ids = [aws_security_group.rds.id]
   storage_encrypted = true
   skip_final_snapshot = false
-  final_snapshot_identifier = "${var.env}-rds"
+  final_snapshot_identifier = "terraform-20230402061459406700000001-snapshot"
   tags       = merge(
     local.common_tags,
     { name = "${var.env}-rds_cluster" }
