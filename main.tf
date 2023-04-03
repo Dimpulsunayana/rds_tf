@@ -45,7 +45,7 @@ resource "aws_rds_cluster" "rds" {
   vpc_security_group_ids = [aws_security_group.rds.id]
   storage_encrypted = true
   skip_final_snapshot = false
-  final_snapshot_identifier = "ci-aurora-cluster-backup"
+  final_snapshot_identifier = "${var.env}-rds"
   tags       = merge(
     local.common_tags,
     { name = "${var.env}-rds_cluster" }
