@@ -44,7 +44,7 @@ resource "aws_rds_cluster" "rds" {
   //storage_type              = "io1"
   allocated_storage         = 20
   iops                      = 1000
-  db_subnet_group_name   = aws_docdb_subnet_group.rds.name
+  db_subnet_group_name   = aws_db_subnet_group.rds.name
   vpc_security_group_ids = [aws_security_group.rds.id]
   storage_encrypted = true
   skip_final_snapshot = true
